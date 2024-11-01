@@ -1,0 +1,41 @@
+.chart-view {
+    width: 688px;
+    height: 305px;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    margin-right: 10px;
+    margin-left: 14px;
+}
+
+.chart-zone {
+    width: 619px;
+    height: 305px;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+}
+
+.chart-control-button {
+    display: flex;
+    flex-direction: column;
+    /* 垂直排列 */
+
+}
+
+.chart-zone-button {
+    width: 89.6px;
+    height: 32px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.angle-chart-box {
+    background-color: #F5F5F5;
+    width: 650px;
+    height: 250px;
+    margin-left: 20px;
+    align-items: center;
+}

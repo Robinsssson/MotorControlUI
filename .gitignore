@@ -1,0 +1,12 @@
+# dir exist
+node_modules
+.vscode
+dist
+
+# file exist
+package-lock.json
+
+# regex file
+*.zip
+*.7z
+*.rar

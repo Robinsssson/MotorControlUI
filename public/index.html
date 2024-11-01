@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="app-name"></title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../src/style/styles.css">
+</head>
+
+<body style="background-color: #F5F5F5;">
+    <div class="group-div">
+        <div class="up-div">
+            <div class="serial-port-zone">
+                <p id="serial-port-text" style="margin-left: 10px;margin-top: 8px;margin-bottom: 8px;"></p>
+                <div id="profile-content" class="profile-box">
+                    <label id='profile-label' for="serial-port"></label>
+                    <select id="serial-port" class="serial-port-select-zone"></select>
+                    <select id="baud-rate" class="serial-port-select-zone">
+                        <option class="option-zone">9600</option>
+                        <option class="option-zone">115200</option>
+                    </select>
+                    <button id="connect-btn" class="serial-port-button"></button>
+                </div>
+
+                <div class="send-zone">
+                    <label id='send-zone-label' for="send-text"></label>
+                    <input id="send-text" class="serial-port-input" placeholder="Type your message here">
+                    <button id="send-btn" class="serial-port-button"></button>
+                </div>
+
+                <div class="recv-zone">
+                    <label id='recv-zone-label' for="recv-text"></label>
+                    <button id="clear-btn" class="serial-port-button"></button>
+                    <button id="save-btn" class="serial-port-button"></button>
+                </div>
+
+                <textarea id="recv-text" class="recv-textarea" placeholder="Received messages..."></textarea>
+            </div>
+
+            <div class="motor-control-zone">
+                <p id='motor-control-p' style="margin-left: 10px;margin-top: 8px;margin-bottom: 8px;"></p>
+                <div class="motor-setting">
+                    <p id='motor1-id-p' style="margin-left: 15px"></p>
+                    <p id='motor1-speed-pid-param-p' style="margin-left: 15px"></p>
+                    <p id='motor1-position-pid-param-p' style="margin-left: 15px"></p>
+                    <p id='motor1-motor-state-p' style="margin-left: 15px"></p>
+                </div>
+
+                <div class="motor-setting">
+                    <p id='motor2-id-p' style="margin-left: 15px"></p>
+                    <p id='motor2-speed-pid-param-p' style="margin-left: 15px"></p>
+                    <p id='motor2-position-pid-param-p' style="margin-left: 15px"></p>
+                    <p id='motor2-motor-state-p' style="margin-left: 15px"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-div">
+            <div class="chart-view">
+                <p id='chart-view-p' style="margin-left: 10px;margin-top: 8px;margin-bottom: 8px;"></p>
+                <div class='angle-chart-box'>
+                    <canvas id='chart'></canvas>
+                </div>
+                
+            </div>
+
+            <div class="chart-zone">
+                <p id='chart-zone-p' style="margin-left: 10px;margin-top: 8px;margin-bottom: 8px;"></p>
+                <div class="chart-control-button">
+                    <button id="pitch-btn" class="chart-zone-button"></button>
+                    <button id="roll-btn" class="chart-zone-button"></button>
+                    <button id="yaw-btn" class="chart-zone-button"></button>
+                </div>
+                <div>
+                    We are using Node.js <span id="node-version"></span>,
+                    Chromium <span id="chrome-version"></span>, Electron
+                    <span id="electron-version"></span>, and Serialport
+                    <span id="serialport-version"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../src/index.js"></script>
+    <script type="module" src="../src/config.js"></script>
+    <script type="module" src="../src/serialControl.js"></script>
+    <script type="module" src="../src/utils.js"></script>
+    <script type="module" src="../src/fonts.js"></script>
+    <script type="module" src="../src/chartFresh.js"></script>
+</body>
+
+</html>
