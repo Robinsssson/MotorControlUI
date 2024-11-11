@@ -1,6 +1,6 @@
 .chart-view {
-    width: 688px;
-    height: 305px;
+    width: 524px;
+    height: 230px;
     border-style: solid;
     border-radius: 10px;
     border-width: 2px;
@@ -9,11 +9,12 @@
 }
 
 .chart-zone {
-    width: 619px;
-    height: 305px;
+    width: 800px;
+    height:230px;
     border-style: solid;
     border-radius: 10px;
     border-width: 2px;
+    margin-right: 15px;
 }
 
 .chart-control-button {
@@ -34,8 +35,8 @@
 
 .angle-chart-box {
     background-color: #F5F5F5;
-    width: 650px;
-    height: 250px;
-    margin-left: 20px;
+    width: 500px;
+    height: 180px;
+    margin-left: 10px;
     align-items: center;
 }

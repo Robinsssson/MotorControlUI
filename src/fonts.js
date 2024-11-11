@@ -1,11 +1,11 @@
 const LANGUAGES = {
     EN: {
         'app-name': 'MotorControlUI',
-        'send-zone-label': 'Send Zone',
+        'send-zone-label': 'Send',
         'connect-btn': 'Connect',
         'profile-label': 'Profile',
         'send-btn': 'Send',
-        'recv-zone-label': 'Recv Zone',
+        'recv-zone-label': 'Recv',
         'clear-btn': 'Clear',
         'save-btn': 'Save',
         'motor-control-p': 'Motor Control',
@@ -32,12 +32,12 @@ const LANGUAGES = {
         'app-name': '电机控制软件',
 
         'serial-port-text': '串口控制',
-        'send-zone-label': '发送区',
+        'send-zone-label': '发送',
         'connect-btn': '连接',
         'profile-label': '配置',
         'clear-btn': '清空',
         'send-btn': '发送',
-        'recv-zone-label': '接收区',
+        'recv-zone-label': '接收',
         'save-btn': '保存',
         'motor-control-p': '电机控制',
 
@@ -60,7 +60,7 @@ const LANGUAGES = {
     }
 };
 
-function setLanguage(lang) {
+export function setLanguage(lang) {
     const selectedLang = LANGUAGES[lang.toUpperCase()];
 
     if (selectedLang) {
@@ -82,5 +82,4 @@ function setLanguage(lang) {
 
 
 
-// 设置为中文
-setLanguage('en');
+

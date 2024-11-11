@@ -1,7 +1,0 @@
-const enArray = {
-    
-}
-
-const cnArray = {
-    
-}

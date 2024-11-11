@@ -1,5 +1,3 @@
-// import { listSerialPorts } from "./serialControl";
-
 const buttonPitch = document.getElementById('pitch-btn');
 const buttonRoll = document.getElementById('roll-btn');
 const buttonYaw = document.getElementById('yaw-btn');
@@ -11,7 +9,7 @@ let objMainFrame = {
     axisStateArray: [
         false, false, false
     ],
-    recvFileSavePath: "~/Download/",
+    recvFileSavePath: '~/Download/',
 
     motor1: {
         id: 0x141,
