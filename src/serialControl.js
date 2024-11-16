@@ -1,5 +1,7 @@
 const { ipcRenderer } = require('electron');
+const fs = require('fs');
 const { SerialPort, ReadlineParser } = require('serialport');
+const path = require('path');
 
 const connectButton = document.getElementById('connect-btn');
 const comSelect = document.getElementById('serial-port');
@@ -23,7 +25,8 @@ async function setComSelect() {
         }
         console.log('ports', ports);
         for (const item of ports) {
-            const exist = Array.from(comSelect.options).some(option => option.value === item.path);
+            const exist = Array.from(comSelect.options)
+                .some(option => option.value === item.path);
             if (exist)
                 continue;
             const option = document.createElement('option');
@@ -103,3 +106,33 @@ saveButton.addEventListener('click', async () => {
     const recvZoneValue = recvZone.value;
     ipcRenderer.invoke('save-file', recvZoneValue);
 });
+
+
+const serialDir = './log-file/serial-port-log';
+if (!fs.existsSync(serialDir)) {
+    fs.mkdirSync(serialDir, { recursive: true });
+}
+
+const maxRecvZoneLine = 100;
+let savedRecvZibeData = false;
+recvZone.addEventListener('input', () => {
+    const lines = recvZone.value.split('\n');
+    const lineCount = lines.length;
+    if (lineCount > maxRecvZoneLine && !savedRecvZibeData) {
+        savedRecvZibeData = true;
+        ((content) => {
+            const now = new Date();
+            const fileName = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}_` +
+                `${String(now.getHours()).padStart(2, '0')}-${String(now.getMinutes()).padStart(2, '0')}-${String(now.getSeconds()).padStart(2, '0')}.txt`;
+            const filePath = path.join(serialDir, fileName);
+            fs.writeFile(filePath, content, 'utf-8', (err) => {
+                if (err) {
+                    console.error('error in save file:', err);
+                }
+            });
+            savedRecvZibeData = ture;
+        })(recvZone.value);
+        recvZone.value = '';
+    }
+});
+

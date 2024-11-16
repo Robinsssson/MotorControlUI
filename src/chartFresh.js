@@ -17,3 +17,8 @@ const chart = new Chart(ctx, {
     // Configuration options go here
     options: {}
 });
+
+
+// chart.addEventListener('chart-fresh', (time, data) => {
+
+// });

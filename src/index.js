@@ -1,10 +1,9 @@
 const buttonPitch = document.getElementById('pitch-btn');
 const buttonRoll = document.getElementById('roll-btn');
 const buttonYaw = document.getElementById('yaw-btn');
-const buttonConnect = document.getElementById('connect-btn');
 
 
-let objMainFrame = {
+export let objMainFrame = {
     stateConnect: false,
     axisStateArray: [
         false, false, false
